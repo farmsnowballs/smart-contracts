@@ -3,14 +3,15 @@
   "devDependencies": {
     "@nomiclabs/hardhat-ethers": "^2.0.1",
     "@nomiclabs/hardhat-waffle": "^2.0.1",
-    "chai": "^4.3.0",
+    "chai": "^4.3.4",
     "ethereum-waffle": "^3.3.0",
     "ethers": "^5.0.31",
     "hardhat": "^2.0.11",
     "hardhat-abi-exporter": "^2.1.2",
     "hardhat-contract-sizer": "^2.0.3",
     "hardhat-deploy": "^0.7.5",
-    "hardhat-deploy-ethers": "^0.3.0-beta.7"
+    "hardhat-deploy-ethers": "^0.3.0-beta.7",
+    "mocha": "^7.2.0"
   },
   "dependencies": {
     "@openzeppelin/contracts": "^3.4.0",

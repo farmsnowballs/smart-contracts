@@ -70,6 +70,10 @@ module.exports = {
         url: AVALANCHE_MAINNET_URL,
         enabled: true,
       },
+      accounts: {
+        accountsBalance: "1000000000000000000000000000000", 
+        count: 50
+      }
     },
     mainnet: {
       chainId: 43114,

@@ -7,14 +7,14 @@ dapp
 deploy
 deprecated
 node_modules
-test
 
 #Hardhat files
 cache
 artifacts
 
 .DS_Store
-.vscode
 
 #Localfiles
 deployments/localhost/
+.vscode
+.mocharc.json
