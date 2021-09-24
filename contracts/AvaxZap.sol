@@ -5,6 +5,7 @@ import "./interfaces/IWAVAX.sol";
 import "./lib/Ownable.sol";
 import "./lib/SafeMath.sol";
 import "./interfaces/IYakStrategy.sol";
+import "./interfaces/IERC20.sol";
 
 /**
  * @notice 
@@ -21,6 +22,11 @@ contract AvaxZap is Ownable {
         transferOwnership(_timelock);
     }
 
+    receive() external payable {
+        // only accept AVAX via fallback from the WAVAX contract
+        assert(msg.sender == WAVAX);
+    }
+
  /**
    * @notice deposit wavax to the contract on behalf of user
    * @param strategyContract strategy contract address
@@ -30,6 +36,18 @@ contract AvaxZap is Ownable {
         IWAVAX(WAVAX).approve(strategyContract, msg.value);
         require(address(IYakStrategy(strategyContract).depositToken()) == address(WAVAX));
         IYakStrategy(strategyContract).depositFor(msg.sender, msg.value);
+    }
+
+    /**
+   * @notice withdraw avax from the contract on behalf of user
+   * @param strategyContract strategy contract address
+   *@param amount amount
+   */
+    function withdrawAVAX(address strategyContract, uint amount) external {
+        require(IERC20(strategyContract).transferFrom(msg.sender,address(this),amount));
+        IYakStrategy(strategyContract).withdraw(amount);
+        IWAVAX(WAVAX).withdraw(amount);
+        msg.sender.transfer(amount);
     }
 
     /**
