@@ -9,7 +9,7 @@ import "./VariableRewardsStrategy.sol";
  * @notice Adapter strategy for VariableRewardsStrategy with SA deposit.
  */
 abstract contract VariableRewardsStrategyForSA is VariableRewardsStrategy {
-    address private immutable swapPairDepositToken;
+    address internal immutable swapPairDepositToken;
 
     constructor(
         address _swapPairDepositToken,
