@@ -1,20 +1,18 @@
 // SPDX-License-Identifier: MIT
 pragma solidity 0.8.13;
 
-import "../../VariableRewardsStrategyForSAV2.sol";
+import "../../BaseStrategy.sol";
 
 import "./interfaces/IStableJoeStaking.sol";
 
-contract CompoundingJoe is VariableRewardsStrategyForSAV2 {
+contract CompoundingJoe is BaseStrategy {
     IStableJoeStaking public stakingContract;
 
     constructor(
         address _stakingContract,
-        address _swapPairDepositToken,
-        uint256 _swapFeeBips,
-        VariableRewardsStrategySettings memory _settings,
+        BaseStrategySettings memory _settings,
         StrategySettings memory _strategySettings
-    ) VariableRewardsStrategyForSAV2(_swapPairDepositToken, _swapFeeBips, _settings, _strategySettings) {
+    ) BaseStrategy(_settings, _strategySettings) {
         stakingContract = IStableJoeStaking(_stakingContract);
     }
 
