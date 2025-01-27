@@ -5,25 +5,15 @@ import "../YakStrategyV3.sol";
 import "../interfaces/IWGAS.sol";
 import "../lib/SafeERC20.sol";
 import "./../interfaces/ISimpleRouter.sol";
+import "./../interfaces/IBaseStrategy.sol";
 
 /**
  * @notice BaseStrategy
  */
-abstract contract BaseStrategy is YakStrategyV3 {
+abstract contract BaseStrategy is IBaseStrategy, YakStrategyV3 {
     using SafeERC20 for IERC20;
 
     IWGAS internal immutable WGAS;
-
-    struct BaseStrategySettings {
-        address gasToken;
-        address[] rewards;
-        address simpleRouter;
-    }
-
-    struct Reward {
-        address reward;
-        uint256 amount;
-    }
 
     address[] public supportedRewards;
     ISimpleRouter public simpleRouter;
