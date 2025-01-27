@@ -40,6 +40,11 @@ contract WombexStrategy is BaseStrategy {
         pid = poolDepositor.lpTokenToPid(rewardPool.asset());
     }
 
+    function _calculateDepositBonus(uint256 _amount) internal override returns (uint256 bonus) {
+        wombatPool.mintFee(address(depositToken));
+        (, bonus) = wombatPool.quotePotentialDeposit(address(depositToken), _amount);
+    }
+
     function _depositToStakingContract(uint256 _amount, uint256) internal override {
         depositToken.approve(address(poolDepositor), _amount);
         poolDepositor.deposit(address(wombatAsset), _amount, 0, true);

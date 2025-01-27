@@ -124,7 +124,8 @@ abstract contract BaseStrategy is YakStrategyV3 {
             depositToken.transferFrom(msg.sender, address(this), _amount), "BaseStrategy::Deposit token transfer failed"
         );
         uint256 depositFee = _calculateDepositFee(_amount);
-        _mint(_account, getSharesForDepositTokens(_amount - depositFee));
+        uint256 depositBonus = _calculateDepositBonus(_amount);
+        _mint(_account, getSharesForDepositTokens(_amount - depositFee + depositBonus));
         _stakeDepositTokens(_amount, depositFee);
         emit Deposit(_account, _amount);
     }
@@ -145,6 +146,13 @@ abstract contract BaseStrategy is YakStrategyV3 {
     function _calculateDepositFee(uint256 _amount) internal view virtual returns (uint256) {
         uint256 depositFeeBips = _getDepositFeeBips();
         return (_amount * depositFeeBips) / _bip();
+    }
+
+    /**
+     * @notice Calculate deposit bonus of underlying farm
+     */
+    function _calculateDepositBonus(uint256 /*_amount*/ ) internal virtual returns (uint256) {
+        return 0;
     }
 
     function withdraw(uint256 _amount) external override {
