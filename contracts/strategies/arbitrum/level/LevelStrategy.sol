@@ -2,12 +2,12 @@
 
 pragma solidity 0.8.13;
 
-import "../../VariableRewardsStrategy.sol";
+import "../../BaseStrategy.sol";
 
 import "./interfaces/ILevelMasterV2.sol";
 import "./interfaces/ILevelPool.sol";
 
-contract LevelStrategy is VariableRewardsStrategy {
+contract LevelStrategy is BaseStrategy {
     address private constant LVL = 0xB64E280e9D1B5DbEc4AcceDb2257A87b400DB149;
 
     ILevelMasterV2 public immutable levelMaster;
@@ -15,40 +15,22 @@ contract LevelStrategy is VariableRewardsStrategy {
     uint256 public immutable PID;
 
     address lpTokenIn;
-    address pairLpTokenIn;
-    uint256 feePairLpTokenIn;
 
     constructor(
         address _stakingContract,
         uint256 _pid,
-        address _pairLpTokenIn,
-        uint256 _feePairLpTokenIn,
-        VariableRewardsStrategySettings memory _variableRewardsStrategySettings,
+        address _lpTokenIn,
+        BaseStrategySettings memory _variableRewardsStrategySettings,
         StrategySettings memory _strategySettings
-    ) VariableRewardsStrategy(_variableRewardsStrategySettings, _strategySettings) {
+    ) BaseStrategy(_variableRewardsStrategySettings, _strategySettings) {
         PID = _pid;
         levelMaster = ILevelMasterV2(_stakingContract);
         levelPool = ILevelPool(levelMaster.levelPool());
-        _updateLPTokenIn(_pairLpTokenIn, _feePairLpTokenIn);
+        lpTokenIn = _lpTokenIn;
     }
 
-    function updateLPTokenIn(address _pair, uint256 _swapFee) external onlyDev {
-        _updateLPTokenIn(_pair, _swapFee);
-    }
-
-    function _updateLPTokenIn(address _pair, uint256 _swapFee) private {
-        if (_pair != address(0)) {
-            address token0 = IPair(_pair).token0();
-            address token1 = IPair(_pair).token1();
-            require(token0 == address(rewardToken) || token1 == address(rewardToken), "LevelStrategy::Invalid pair");
-            lpTokenIn = token0 == address(rewardToken) ? token1 : token0;
-            pairLpTokenIn = _pair;
-            feePairLpTokenIn = _swapFee;
-        } else {
-            lpTokenIn = address(0);
-            pairLpTokenIn = address(0);
-            feePairLpTokenIn = 0;
-        }
+    function updateLPTokenIn(address _lpTokenIn) external onlyDev {
+        lpTokenIn = _lpTokenIn;
     }
 
     function _depositToStakingContract(uint256 _amount, uint256) internal override {
@@ -77,17 +59,14 @@ contract LevelStrategy is VariableRewardsStrategy {
         levelMaster.harvest(PID, address(this));
     }
 
-    function _convertRewardTokenToDepositToken(uint256 fromAmount) internal override returns (uint256 toAmount) {
-        address tokenIn = lpTokenIn;
-        if (tokenIn > address(0)) {
-            fromAmount =
-                DexLibrary.swap(fromAmount, address(rewardToken), tokenIn, IPair(pairLpTokenIn), feePairLpTokenIn);
-        } else {
-            tokenIn = address(rewardToken);
+    function _convertRewardTokenToDepositToken(uint256 _fromAmount) internal override returns (uint256 toAmount) {
+        if (lpTokenIn != address(rewardToken)) {
+            FormattedOffer memory offer = simpleRouter.query(_fromAmount, address(rewardToken), lpTokenIn);
+            _fromAmount = _swap(offer);
         }
         uint256 before = depositToken.balanceOf(address(this));
-        IERC20(tokenIn).approve(address(levelPool), fromAmount);
-        levelPool.addLiquidity(address(depositToken), tokenIn, fromAmount, 0, address(this));
+        IERC20(lpTokenIn).approve(address(levelPool), _fromAmount);
+        levelPool.addLiquidity(address(depositToken), lpTokenIn, _fromAmount, 0, address(this));
         return depositToken.balanceOf(address(this)) - before;
     }
 
