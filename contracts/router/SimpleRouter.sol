@@ -40,7 +40,7 @@ contract SimpleRouter is ISimpleRouter, Ownable {
     }
 
     function query(uint256 _amountIn, address _tokenIn, address _tokenOut)
-        external
+        public
         view
         override
         returns (FormattedOffer memory offer)
@@ -104,7 +104,25 @@ contract SimpleRouter is ISimpleRouter, Ownable {
             revert UnsupportedSwap(tokenIn, tokenOut);
         }
 
-        IERC20(tokenIn).transferFrom(msg.sender, _offer.adapters[0], _offer.amounts[0]);
+        return _swap(tokenIn, _offer);
+    }
+
+    function swap(uint _amountIn, uint _amountOutMin, address _tokenIn, address _tokenOut) external returns (uint amountOut) {
+        FormattedOffer memory offer = query(_amountIn, _tokenIn, _tokenOut);
+
+        if (offer.adapters.length == 0) {
+            revert UnsupportedSwap(_tokenIn, _tokenOut);
+        }
+
+        if (offer.amounts[offer.amounts.length -1] < _amountOutMin) {
+            revert SlippageExceeded();
+        }
+
+        return _swap(_tokenIn, offer);
+    }
+
+    function _swap(address _tokenIn, FormattedOffer memory _offer) internal returns(uint amountOut) {
+        IERC20(_tokenIn).transferFrom(msg.sender, _offer.adapters[0], _offer.amounts[0]);
 
         for (uint256 i; i < _offer.adapters.length; i++) {
             address targetAddress = i < _offer.adapters.length - 1 ? _offer.adapters[i + 1] : msg.sender;
@@ -113,6 +131,6 @@ contract SimpleRouter is ISimpleRouter, Ownable {
             );
         }
 
-        amountOut = _offer.amounts[_offer.amounts.length - 1];
+        return _offer.amounts[_offer.amounts.length - 1];
     }
 }

@@ -5,6 +5,7 @@ import "./../router/interfaces/IYakRouter.sol";
 
 interface ISimpleRouter {
     error UnsupportedSwap(address _tokenIn, address _tokenOut);
+    error SlippageExceeded();
     error InvalidConfiguration();
 
     struct SwapConfig {
