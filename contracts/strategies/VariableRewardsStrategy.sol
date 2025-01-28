@@ -19,7 +19,8 @@ abstract contract VariableRewardsStrategy is YakStrategyV2 {
         string name;
         address platformToken;
         RewardSwapPair[] rewardSwapPairs;
-        address timelock;
+        address dev;
+        address owner;
     }
 
     struct Reward {
@@ -46,7 +47,6 @@ abstract contract VariableRewardsStrategy is YakStrategyV2 {
     {
         name = _settings.name;
         WAVAX = IWAVAX(_settings.platformToken);
-        devAddr = 0x2D580F9CF2fB2D09BC411532988F2aFdA4E7BefF;
 
         for (uint256 i = 0; i < _settings.rewardSwapPairs.length; i++) {
             _addReward(
@@ -57,7 +57,8 @@ abstract contract VariableRewardsStrategy is YakStrategyV2 {
         }
 
         updateDepositsEnabled(true);
-        transferOwnership(_settings.timelock);
+        devAddr = _settings.dev;
+        transferOwnership(_settings.owner);
         emit Reinvest(0, 0);
     }
 
