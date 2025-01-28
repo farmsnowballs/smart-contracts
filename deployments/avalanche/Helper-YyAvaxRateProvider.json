@@ -1,0 +1,60 @@
+{
+  "address": "0x13a80aBe608A054059CfB54Ef08809a05Fc07b82",
+  "abi": [
+    {
+      "inputs": [],
+      "name": "getRate",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "transactionHash": "0x0d6e3b9988be61c2db64f0df3563f7e587efc8834aa062c9004fd89d5772b386",
+  "receipt": {
+    "to": null,
+    "from": "0xDcEDF06Fd33E1D7b6eb4b309f779a0e9D3172e44",
+    "contractAddress": "0x13a80aBe608A054059CfB54Ef08809a05Fc07b82",
+    "transactionIndex": 5,
+    "gasUsed": "124945",
+    "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+    "blockHash": "0x6b31a7c2f3d63215fc532e902408508478bae23d25ed11331833114f38e53b25",
+    "transactionHash": "0x0d6e3b9988be61c2db64f0df3563f7e587efc8834aa062c9004fd89d5772b386",
+    "logs": [],
+    "blockNumber": 32579130,
+    "cumulativeGasUsed": "1687194",
+    "status": 1,
+    "byzantium": true
+  },
+  "args": [],
+  "solcInputHash": "f4283021921373ee7430f5e556cd450a",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.13+commit.abaa5c0e\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"name\":\"getRate\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"details\":\"Stored rate is read from gAVAX (ERC-1155) using yyAVAX's id.\",\"kind\":\"dev\",\"methods\":{},\"title\":\"yyAVAX Rate Provider\",\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{\"getRate()\":{\"notice\":\"Returns the value of yyAVAX in terms of AVAX\"}},\"notice\":\"Returns the value of yyAVAX in terms of AVAX\",\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/helpers/YyAvaxRateProvider.sol\":\"YyAvaxRateProvider\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\",\"useLiteralContent\":true},\"optimizer\":{\"enabled\":true,\"runs\":999},\"remappings\":[]},\"sources\":{\"contracts/helpers/YyAvaxRateProvider.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity 0.8.13;\\n\\nimport \\\"./interfaces/IRateProvider.sol\\\";\\nimport \\\"./interfaces/IGAvax.sol\\\";\\n\\n/**\\n * @title yyAVAX Rate Provider\\n * @notice Returns the value of yyAVAX in terms of AVAX\\n * @dev Stored rate is read from gAVAX (ERC-1155) using yyAVAX's id.\\n */\\ncontract YyAvaxRateProvider is IRateProvider {\\n\\n    /// @notice Geode's ERC-1155 address\\n    address private constant gAVAX = 0x6026a85e11BD895c934Af02647E8C7b4Ea2D9808;\\n\\n    /// @notice Geode's id for yyAVAX\\n    uint256 private constant _id = 45756385483164763772015628191198800763712771278583181747295544980036831301432;\\n\\n    /**\\n     * @notice Returns the value of yyAVAX in terms of AVAX\\n     */\\n    function getRate() external view returns (uint256) {\\n        return IGAvax(gAVAX).pricePerShare(_id);\\n    }\\n}\",\"keccak256\":\"0x47c3b6dcaecb811e4a18768a035754331c2aad8ca0a7bf61285dba6e65db1378\",\"license\":\"MIT\"},\"contracts/helpers/interfaces/IGAvax.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity 0.8.13;\\n\\ninterface IGAvax {\\n    function pricePerShare(uint256 id) external view returns (uint256);\\n}\\n\",\"keccak256\":\"0x8f0c172efc906f36b72a5dfdf8d4fe90203a03bb6758f60e921f5ced6ad8955f\",\"license\":\"MIT\"},\"contracts/helpers/interfaces/IRateProvider.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity 0.8.13;\\n\\ninterface IRateProvider {\\n    function getRate() external view returns (uint256);\\n}\",\"keccak256\":\"0x67d905d5f231d2db024f76ae805cdfa7d50468b186f4ee3155a834748f8ab1dc\",\"license\":\"MIT\"}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b5061014d806100206000396000f3fe608060405234801561001057600080fd5b506004361061002b5760003560e01c8063679aefce14610030575b600080fd5b61003861004a565b60405190815260200160405180910390f35b6040517ff759cc3b0000000000000000000000000000000000000000000000000000000081527f65293248ac7dc05120c6bee23cd982992894bed99a7f0b75c2c5b011ef1e4f386004820152600090736026a85e11bd895c934af02647e8c7b4ea2d98089063f759cc3b90602401602060405180830381865afa1580156100d5573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906100f991906100fe565b905090565b60006020828403121561011057600080fd5b505191905056fea26469706673582212209c3cbcd477fc85f90165bd5098518b315c684426028e9d8f8113a9ce72932ed464736f6c634300080d0033",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b506004361061002b5760003560e01c8063679aefce14610030575b600080fd5b61003861004a565b60405190815260200160405180910390f35b6040517ff759cc3b0000000000000000000000000000000000000000000000000000000081527f65293248ac7dc05120c6bee23cd982992894bed99a7f0b75c2c5b011ef1e4f386004820152600090736026a85e11bd895c934af02647e8c7b4ea2d98089063f759cc3b90602401602060405180830381865afa1580156100d5573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906100f991906100fe565b905090565b60006020828403121561011057600080fd5b505191905056fea26469706673582212209c3cbcd477fc85f90165bd5098518b315c684426028e9d8f8113a9ce72932ed464736f6c634300080d0033",
+  "devdoc": {
+    "details": "Stored rate is read from gAVAX (ERC-1155) using yyAVAX's id.",
+    "kind": "dev",
+    "methods": {},
+    "title": "yyAVAX Rate Provider",
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {
+      "getRate()": {
+        "notice": "Returns the value of yyAVAX in terms of AVAX"
+      }
+    },
+    "notice": "Returns the value of yyAVAX in terms of AVAX",
+    "version": 1
+  },
+  "storageLayout": {
+    "storage": [],
+    "types": null
+  }
+}

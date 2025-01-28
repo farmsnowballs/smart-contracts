@@ -1,0 +1,449 @@
+{
+  "address": "0x36C69a432Dbf4e7d603E06C675B9f062165fcC52",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_voter",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "_devAddr",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "_wombatWaddle",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_boostFeeBips",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_minBoostAmount",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_strategy",
+          "type": "address"
+        }
+      ],
+      "name": "approveStrategy",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "approvedStrategies",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "boost",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_masterWombat",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_pid",
+          "type": "uint256"
+        },
+        {
+          "internalType": "address",
+          "name": "_token",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "depositToStakingContract",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "devAddr",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_masterWombat",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_pid",
+          "type": "uint256"
+        },
+        {
+          "internalType": "address",
+          "name": "_token",
+          "type": "address"
+        }
+      ],
+      "name": "emergencyWithdraw",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_masterWombat",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_pid",
+          "type": "uint256"
+        }
+      ],
+      "name": "getRewards",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_masterWombat",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_pid",
+          "type": "uint256"
+        }
+      ],
+      "name": "pendingRewards",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "address",
+              "name": "reward",
+              "type": "address"
+            },
+            {
+              "internalType": "uint256",
+              "name": "amount",
+              "type": "uint256"
+            }
+          ],
+          "internalType": "struct WombatProxy.Reward[]",
+          "name": "",
+          "type": "tuple[]"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_masterWombat",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_pid",
+          "type": "uint256"
+        }
+      ],
+      "name": "totalDeposits",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_boostFeeBips",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_minBoostAmount",
+          "type": "uint256"
+        }
+      ],
+      "name": "updateBoostFee",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "newValue",
+          "type": "address"
+        }
+      ],
+      "name": "updateDevAddr",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "voter",
+      "outputs": [
+        {
+          "internalType": "contract IWombatVoter",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_masterWombat",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_pid",
+          "type": "uint256"
+        },
+        {
+          "internalType": "address",
+          "name": "_token",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "withdrawFromStakingContract",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "wombatWaddle",
+      "outputs": [
+        {
+          "internalType": "contract IWombatWaddle",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "transactionHash": "0xb8d0170b9d6aabfcec602d6ba5d1899665ddb9834524724c9e7d485422a28ec1",
+  "receipt": {
+    "to": null,
+    "from": "0xDcEDF06Fd33E1D7b6eb4b309f779a0e9D3172e44",
+    "contractAddress": "0x36C69a432Dbf4e7d603E06C675B9f062165fcC52",
+    "transactionIndex": 16,
+    "gasUsed": "1538706",
+    "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+    "blockHash": "0xf8f0781e8ab3c45588d7637a9cfbed1bf202b75ad1e6f9158d075d1322ff6ad3",
+    "transactionHash": "0xb8d0170b9d6aabfcec602d6ba5d1899665ddb9834524724c9e7d485422a28ec1",
+    "logs": [],
+    "blockNumber": 41889831,
+    "cumulativeGasUsed": "4302301",
+    "status": 1,
+    "byzantium": true
+  },
+  "args": [
+    "0xaA237B7839b2260715b0b77F360A37280aB8916A",
+    "0xDcEDF06Fd33E1D7b6eb4b309f779a0e9D3172e44",
+    "0x34E2F923bBa206358EcE221af73E8d121837F873",
+    0,
+    "1000000000000000000000000000000"
+  ],
+  "solcInputHash": "7696a0e9e5d3b6a79efdccd1a63ea80a",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.13+commit.abaa5c0e\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_voter\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_devAddr\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_wombatWaddle\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_boostFeeBips\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_minBoostAmount\",\"type\":\"uint256\"}],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_strategy\",\"type\":\"address\"}],\"name\":\"approveStrategy\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"approvedStrategies\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_amount\",\"type\":\"uint256\"}],\"name\":\"boost\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_masterWombat\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_pid\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"_token\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_amount\",\"type\":\"uint256\"}],\"name\":\"depositToStakingContract\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"devAddr\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_masterWombat\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_pid\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"_token\",\"type\":\"address\"}],\"name\":\"emergencyWithdraw\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_masterWombat\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_pid\",\"type\":\"uint256\"}],\"name\":\"getRewards\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_masterWombat\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_pid\",\"type\":\"uint256\"}],\"name\":\"pendingRewards\",\"outputs\":[{\"components\":[{\"internalType\":\"address\",\"name\":\"reward\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"internalType\":\"struct WombatProxy.Reward[]\",\"name\":\"\",\"type\":\"tuple[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_masterWombat\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_pid\",\"type\":\"uint256\"}],\"name\":\"totalDeposits\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_boostFeeBips\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_minBoostAmount\",\"type\":\"uint256\"}],\"name\":\"updateBoostFee\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"newValue\",\"type\":\"address\"}],\"name\":\"updateDevAddr\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"voter\",\"outputs\":[{\"internalType\":\"contract IWombatVoter\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_masterWombat\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_pid\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"_token\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_amount\",\"type\":\"uint256\"}],\"name\":\"withdrawFromStakingContract\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"wombatWaddle\",\"outputs\":[{\"internalType\":\"contract IWombatWaddle\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{\"approveStrategy(address)\":{\"details\":\"Very sensitive, restricted to devAddrCan only be set once per PID and staking contract (reported by the strategy)\",\"params\":{\"_strategy\":\"address\"}},\"boost(uint256)\":{\"details\":\"This contract needs approval to transfer _amount WOM before calling this method\",\"params\":{\"_amount\":\"WOM amount\"}},\"updateBoostFee(uint256,uint256)\":{\"params\":{\"_boostFeeBips\":\"Boost fee bips, check BIPS_DIVISOR\",\"_minBoostAmount\":\"Minimum amount of WOM to create a new lock position\"}},\"updateDevAddr(address)\":{\"params\":{\"newValue\":\"address\"}}},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{\"approveStrategy(address)\":{\"notice\":\"Add an approved strategy\"},\"boost(uint256)\":{\"notice\":\"Transfer from _amount WOM from sender and lock for veWOM\"},\"updateBoostFee(uint256,uint256)\":{\"notice\":\"Update additional/optional boost fee settins\"},\"updateDevAddr(address)\":{\"notice\":\"Update devAddr\"}},\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/strategies/crosschain/wombat/WombatProxy.sol\":\"WombatProxy\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\",\"useLiteralContent\":true},\"optimizer\":{\"enabled\":true,\"runs\":999},\"remappings\":[]},\"sources\":{\"contracts/interfaces/IERC20.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\npragma solidity 0.8.13;\\n\\ninterface IERC20 {\\n    function name() external view returns (string memory);\\n\\n    function symbol() external view returns (string memory);\\n\\n    function decimals() external view returns (uint8);\\n\\n    function totalSupply() external view returns (uint256);\\n\\n    function balanceOf(address account) external view returns (uint256);\\n\\n    function transfer(address recipient, uint256 amount) external returns (bool);\\n\\n    function allowance(address owner, address spender) external view returns (uint256);\\n\\n    function approve(address spender, uint256 amount) external returns (bool);\\n\\n    function transferFrom(\\n        address sender,\\n        address recipient,\\n        uint256 amount\\n    ) external returns (bool);\\n\\n    function permit(\\n        address owner,\\n        address spender,\\n        uint256 value,\\n        uint256 deadline,\\n        uint8 v,\\n        bytes32 r,\\n        bytes32 s\\n    ) external;\\n\\n    event Transfer(address indexed from, address indexed to, uint256 value);\\n    event Approval(address indexed owner, address indexed spender, uint256 value);\\n}\\n\",\"keccak256\":\"0x13986c2d371de8b29ffbbd5c2a5daa3fe6801801ba3b09530dbfc714d239adcb\",\"license\":\"MIT\"},\"contracts/strategies/crosschain/wombat/WombatProxy.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\npragma solidity 0.8.13;\\n\\nimport \\\"./../../../interfaces/IERC20.sol\\\";\\nimport \\\"./interfaces/IWombatVoter.sol\\\";\\nimport \\\"./interfaces/IBoostedMasterWombat.sol\\\";\\nimport \\\"./interfaces/IWombatWaddle.sol\\\";\\n\\ninterface IWombatStrategy {\\n    function pid() external view returns (uint256);\\n    function masterWombat() external view returns (address);\\n}\\n\\nlibrary SafeProxy {\\n    function safeExecute(IWombatVoter voter, address target, uint256 value, bytes memory data)\\n        internal\\n        returns (bytes memory)\\n    {\\n        (bool success, bytes memory returnValue) = voter.execute(target, value, data);\\n        if (!success) revert(\\\"WombatProxy::safeExecute failed\\\");\\n        return returnValue;\\n    }\\n}\\n\\ncontract WombatProxy {\\n    using SafeProxy for IWombatVoter;\\n\\n    struct Reward {\\n        address reward;\\n        uint256 amount;\\n    }\\n\\n    uint256 constant LOCK_DAYS = 1461;\\n    uint256 internal constant BIPS_DIVISOR = 10000;\\n\\n    address public devAddr;\\n    IWombatVoter public immutable voter;\\n    IWombatWaddle public immutable wombatWaddle;\\n    address immutable WOM;\\n\\n    // staking contract => pid => strategy\\n    mapping(address => mapping(uint256 => address)) public approvedStrategies;\\n    uint256 boostFeeBips;\\n    uint256 minBoostAmount;\\n\\n    modifier onlyDev() {\\n        require(msg.sender == devAddr, \\\"WombatProxy::onlyDev\\\");\\n        _;\\n    }\\n\\n    modifier onlyStrategy(address _stakingContract, uint256 _pid) {\\n        require(approvedStrategies[_stakingContract][_pid] == msg.sender, \\\"WombatProxy::onlyStrategy\\\");\\n        _;\\n    }\\n\\n    constructor(\\n        address _voter,\\n        address _devAddr,\\n        address _wombatWaddle,\\n        uint256 _boostFeeBips,\\n        uint256 _minBoostAmount\\n    ) {\\n        require(_devAddr > address(0), \\\"WombatProxy::Invalid dev address provided\\\");\\n        devAddr = _devAddr;\\n        voter = IWombatVoter(_voter);\\n        wombatWaddle = IWombatWaddle(_wombatWaddle);\\n        WOM = wombatWaddle.wom();\\n        boostFeeBips = _boostFeeBips;\\n        minBoostAmount = _minBoostAmount;\\n    }\\n\\n    /**\\n     * @notice Update devAddr\\n     * @param newValue address\\n     */\\n    function updateDevAddr(address newValue) external onlyDev {\\n        devAddr = newValue;\\n    }\\n\\n    /**\\n     * @notice Add an approved strategy\\n     * @dev Very sensitive, restricted to devAddr\\n     * @dev Can only be set once per PID and staking contract (reported by the strategy)\\n     * @param _strategy address\\n     */\\n    function approveStrategy(address _strategy) public onlyDev {\\n        uint256 pid = IWombatStrategy(_strategy).pid();\\n        address stakingContract = IWombatStrategy(_strategy).masterWombat();\\n        require(approvedStrategies[stakingContract][pid] == address(0), \\\"WombatProxy::Strategy for PID already added\\\");\\n        approvedStrategies[stakingContract][pid] = _strategy;\\n    }\\n\\n    /**\\n     * @notice Transfer from _amount WOM from sender and lock for veWOM\\n     * @dev This contract needs approval to transfer _amount WOM before calling this method\\n     * @param _amount WOM amount\\n     */\\n    function boost(uint256 _amount) public onlyDev {\\n        IERC20(WOM).transferFrom(msg.sender, address(voter), _amount);\\n        _boost(_amount);\\n    }\\n\\n    /**\\n     * @notice Update additional/optional boost fee settins\\n     * @param _boostFeeBips Boost fee bips, check BIPS_DIVISOR\\n     * @param _minBoostAmount Minimum amount of WOM to create a new lock position\\n     */\\n    function updateBoostFee(uint256 _boostFeeBips, uint256 _minBoostAmount) external onlyDev {\\n        require(_boostFeeBips < BIPS_DIVISOR, \\\"WombatProxy::Invalid boost fee\\\");\\n        boostFeeBips = _boostFeeBips;\\n        minBoostAmount = _minBoostAmount;\\n    }\\n\\n    function depositToStakingContract(address _masterWombat, uint256 _pid, address _token, uint256 _amount)\\n        external\\n        onlyStrategy(_masterWombat, _pid)\\n    {\\n        voter.safeExecute(_token, 0, abi.encodeWithSelector(IERC20.approve.selector, _masterWombat, _amount));\\n        voter.safeExecute(\\n            _masterWombat, 0, abi.encodeWithSelector(IBoostedMasterWombat.deposit.selector, _pid, _amount)\\n        );\\n    }\\n\\n    function withdrawFromStakingContract(address _masterWombat, uint256 _pid, address _token, uint256 _amount)\\n        external\\n        onlyStrategy(_masterWombat, _pid)\\n    {\\n        getRewards(_masterWombat, _pid);\\n        voter.safeExecute(\\n            _masterWombat, 0, abi.encodeWithSelector(IBoostedMasterWombat.withdraw.selector, _pid, _amount)\\n        );\\n        voter.safeExecute(_token, 0, abi.encodeWithSelector(IERC20.transfer.selector, msg.sender, _amount));\\n    }\\n\\n    function pendingRewards(address _masterWombat, uint256 _pid) public view returns (Reward[] memory) {\\n        (, address[] memory bonusTokenAddresses,, uint256[] memory pendingBonusRewards) =\\n            IBoostedMasterWombat(_masterWombat).pendingTokens(_pid, address(voter));\\n        Reward[] memory rewards = new Reward[](bonusTokenAddresses.length);\\n        for (uint256 i = 0; i < bonusTokenAddresses.length; i++) {\\n            uint256 boostFee = bonusTokenAddresses[i] == WOM ? _calculateBoostFee(pendingBonusRewards[i]) : 0;\\n            rewards[i] = Reward({reward: bonusTokenAddresses[i], amount: pendingBonusRewards[i] - boostFee});\\n        }\\n        return rewards;\\n    }\\n\\n    function getRewards(address _masterWombat, uint256 _pid) public onlyStrategy(_masterWombat, _pid) {\\n        Reward[] memory rewards = pendingRewards(_masterWombat, _pid);\\n        voter.safeExecute(_masterWombat, 0, abi.encodeWithSelector(IBoostedMasterWombat.deposit.selector, _pid, 0));\\n        for (uint256 i; i < rewards.length; i++) {\\n            uint256 reward = IERC20(rewards[i].reward).balanceOf(address(voter));\\n\\n            if (rewards[i].reward == WOM) {\\n                uint256 reservedWom = voter.reservedWom();\\n                reservedWom += _calculateBoostFee(reward - reservedWom);\\n                reward -= reservedWom;\\n                if (reservedWom > minBoostAmount) {\\n                    _boost(reservedWom);\\n                    reservedWom = 0;\\n                }\\n                voter.setReservedWom(reservedWom);\\n            }\\n\\n            voter.safeExecute(\\n                rewards[i].reward, 0, abi.encodeWithSelector(IERC20.transfer.selector, msg.sender, reward)\\n            );\\n        }\\n    }\\n\\n    function _calculateBoostFee(uint256 _womAmount) internal view returns (uint256) {\\n        return (_womAmount * boostFeeBips) / BIPS_DIVISOR;\\n    }\\n\\n    function _boost(uint256 _amount) internal {\\n        voter.safeExecute(\\n            address(WOM), 0, abi.encodeWithSelector(IERC20.approve.selector, address(wombatWaddle), _amount)\\n        );\\n        voter.safeExecute(\\n            address(wombatWaddle), 0, abi.encodeWithSelector(IWombatWaddle.mint.selector, _amount, LOCK_DAYS)\\n        );\\n    }\\n\\n    function totalDeposits(address _masterWombat, uint256 _pid) external view returns (uint256) {\\n        (uint128 liquidity,,,) = IBoostedMasterWombat(_masterWombat).userInfo(_pid, address(voter));\\n        return liquidity;\\n    }\\n\\n    function emergencyWithdraw(address _masterWombat, uint256 _pid, address _token)\\n        external\\n        onlyStrategy(_masterWombat, _pid)\\n    {\\n        voter.safeExecute(\\n            _masterWombat, 0, abi.encodeWithSelector(IBoostedMasterWombat.emergencyWithdraw.selector, _pid)\\n        );\\n        voter.safeExecute(\\n            _token,\\n            0,\\n            abi.encodeWithSelector(IERC20.transfer.selector, msg.sender, IERC20(_token).balanceOf(address(voter)))\\n        );\\n    }\\n}\\n\",\"keccak256\":\"0xd89356c7b7073a9a87f9c0f3bfc85f1214748f4634e5bbc614a6447fd33390b4\",\"license\":\"MIT\"},\"contracts/strategies/crosschain/wombat/interfaces/IBoostedMasterWombat.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\npragma solidity 0.8.13;\\n\\ninterface IBoostedMasterWombat {\\n    function getAssetPid(address _asset) external view returns (uint256);\\n\\n    function deposit(uint256 _pid, uint256 _amount) external;\\n\\n    function withdraw(uint256 _pid, uint256 _amount) external;\\n\\n    function emergencyWithdraw(uint256 _pid) external;\\n\\n    function userInfo(uint256 _pid, address _user) external view returns (uint128, uint128, uint128, uint128);\\n\\n    function pendingTokens(uint256 _pid, address _user)\\n        external\\n        view\\n        returns (\\n            uint256 pendingRewards,\\n            address[] memory bonusTokenAddresses,\\n            string[] memory bonusTokenSymbols,\\n            uint256[] memory pendingBonusRewards\\n        );\\n}\\n\",\"keccak256\":\"0x97dcddb714d9291f2310498f08d0e9f147a403a79b27b712e12dad548c433a52\",\"license\":\"MIT\"},\"contracts/strategies/crosschain/wombat/interfaces/IWombatVoter.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\npragma solidity 0.8.13;\\n\\ninterface IWombatVoter {\\n    function execute(address to, uint256 value, bytes calldata data) external returns (bool, bytes memory);\\n\\n    function setProxy(address _proxy) external;\\n\\n    function reservedWom() external view returns (uint256);\\n\\n    function setReservedWom(uint256 _reservedWom) external;\\n}\\n\",\"keccak256\":\"0xe730975d56a98c167d11ccf3e1af0c279d8d10e3b3ddc08719706bbb5e60d87a\",\"license\":\"MIT\"},\"contracts/strategies/crosschain/wombat/interfaces/IWombatWaddle.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\npragma solidity 0.8.13;\\n\\ninterface IWombatWaddle {\\n    struct Breeding {\\n        uint48 unlockTime;\\n        uint104 womAmount;\\n        uint104 veWomAmount;\\n    }\\n\\n    struct UserInfo {\\n        // reserve usage for future upgrades\\n        uint256[10] reserved;\\n        Breeding[] breedings;\\n    }\\n\\n    function mint(uint256 amount, uint256 lockDays) external;\\n\\n    function update(uint256 slot, uint256 lockDays) external;\\n\\n    function getUserInfo(address addr) external view returns (UserInfo memory);\\n\\n    function wom() external view returns (address);\\n}\\n\",\"keccak256\":\"0x869800ccb485b0daf2bd33b1a15d678e0cbfd08c85a7140f3e5b20ec65237a06\",\"license\":\"MIT\"}},\"version\":1}",
+  "bytecode": "0x60e06040523480156200001157600080fd5b5060405162001c4238038062001c4283398101604081905262000034916200016c565b6001600160a01b038416620000a15760405162461bcd60e51b815260206004820152602960248201527f576f6d62617450726f78793a3a496e76616c6964206465762061646472657373604482015268081c1c9bdd9a59195960ba1b606482015260840160405180910390fd5b600080546001600160a01b0319166001600160a01b0386811691909117909155858116608052831660a0819052604080516362d3111760e11b8152905163c5a6222e916004808201926020929091908290030181865afa1580156200010a573d6000803e3d6000fd5b505050506040513d601f19601f82011682018060405250810190620001309190620001c9565b6001600160a01b031660c05260029190915560035550620001ee915050565b80516001600160a01b03811681146200016757600080fd5b919050565b600080600080600060a086880312156200018557600080fd5b62000190866200014f565b9450620001a0602087016200014f565b9350620001b0604087016200014f565b6060870151608090970151959894975095949392505050565b600060208284031215620001dc57600080fd5b620001e7826200014f565b9392505050565b60805160a05160c0516119ca62000278600039600081816104a4015281816109b101528181610cfb015261123901526000818160f40152818161120701526112860152600081816101730152818161039101528181610475015281816107d0015281816108b701528181610af901528181610c8301528181610d530152610e4501526119ca6000f3fe608060405234801561001057600080fd5b50600436106100ea5760003560e01c80636656f9aa1161008c5780639054261f116100665780639054261f1461020f5780639291d56314610222578063da09c72c14610235578063daa4aa691461024857600080fd5b80636656f9aa146101c85780637387f44d146101e95780639042b3d0146101fc57600080fd5b80633b8ae397116100c85780633b8ae3971461015b57806346c96aac1461016e578063551512de146101955780636099ecb2146101a857600080fd5b8063143de794146100ef57806319d7d7df146101335780631b55d19e14610148575b600080fd5b6101167f000000000000000000000000000000000000000000000000000000000000000081565b6040516001600160a01b0390911681526020015b60405180910390f35b61014661014136600461130f565b61027c565b005b610146610156366004611357565b6103ee565b610146610169366004611370565b61051e565b6101167f000000000000000000000000000000000000000000000000000000000000000081565b6101466101a3366004611394565b61071f565b6101bb6101b63660046113d6565b610880565b60405161012a9190611402565b6101db6101d63660046113d6565b610ac2565b60405190815260200161012a565b6101466101f73660046113d6565b610b8e565b61014661020a36600461145a565b610f05565b61014661021d36600461130f565b610fb2565b610146610230366004611370565b6110a3565b600054610116906001600160a01b031681565b6101166102563660046113d6565b60016020908152600092835260408084209091529082529020546001600160a01b031681565b6001600160a01b038085166000908152600160209081526040808320878452909152902054859185911633146102f95760405162461bcd60e51b815260206004820152601960248201527f576f6d62617450726f78793a3a6f6e6c7953747261746567790000000000000060448201526064015b60405180910390fd5b6040516001600160a01b0387166024820152604481018490526103b990859060009063095ea7b360e01b906064015b60408051601f198184030181529190526020810180517bffffffffffffffffffffffffffffffffffffffffffffffffffffffff167fffffffff00000000000000000000000000000000000000000000000000000000909316929092179091526001600160a01b037f000000000000000000000000000000000000000000000000000000000000000016929190611123565b5060405160248101869052604481018490526103e5908790600090631c57762b60e31b90606401610328565b50505050505050565b6000546001600160a01b0316331461043f5760405162461bcd60e51b81526020600482015260146024820152732bb7b6b130ba283937bc3c9d1d37b7363ca232bb60611b60448201526064016102f0565b6040517f23b872dd0000000000000000000000000000000000000000000000000000000081523360048201526001600160a01b037f000000000000000000000000000000000000000000000000000000000000000081166024830152604482018390527f000000000000000000000000000000000000000000000000000000000000000016906323b872dd906064016020604051808303816000875af11580156104ed573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906105119190611491565b5061051b816111fa565b50565b6000546001600160a01b0316331461056f5760405162461bcd60e51b81526020600482015260146024820152732bb7b6b130ba283937bc3c9d1d37b7363ca232bb60611b60448201526064016102f0565b6000816001600160a01b031663f10684546040518163ffffffff1660e01b8152600401602060405180830381865afa1580156105af573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906105d391906114ac565b90506000826001600160a01b0316633bd61ba86040518163ffffffff1660e01b8152600401602060405180830381865afa158015610615573d6000803e3d6000fd5b505050506040513d601f19601f8201168201806040525081019061063991906114c5565b6001600160a01b03808216600090815260016020908152604080832087845290915290205491925016156106d55760405162461bcd60e51b815260206004820152602b60248201527f576f6d62617450726f78793a3a537472617465677920666f722050494420616c60448201527f726561647920616464656400000000000000000000000000000000000000000060648201526084016102f0565b6001600160a01b0390811660009081526001602090815260408083209483529390529190912080549190921673ffffffffffffffffffffffffffffffffffffffff19909116179055565b6001600160a01b038084166000908152600160209081526040808320868452909152902054849184911633146107975760405162461bcd60e51b815260206004820152601960248201527f576f6d62617450726f78793a3a6f6e6c7953747261746567790000000000000060448201526064016102f0565b6107b8856000635312ea8e60e01b8760405160240161032891815260200190565b506040516370a0823160e01b81526001600160a01b037f00000000000000000000000000000000000000000000000000000000000000008116600483015261087891859160009163a9059cbb60e01b913391908516906370a0823190602401602060405180830381865afa158015610834573d6000803e3d6000fd5b505050506040513d601f19601f8201168201806040525081019061085891906114ac565b6040516001600160a01b0390921660248301526044820152606401610328565b505050505050565b6040517fffcd4263000000000000000000000000000000000000000000000000000000008152600481018290526001600160a01b037f00000000000000000000000000000000000000000000000000000000000000008116602483015260609160009182919086169063ffcd426390604401600060405180830381865afa15801561090f573d6000803e3d6000fd5b505050506040513d6000823e601f3d908101601f1916820160405261093791908101906116cc565b9350509250506000825167ffffffffffffffff811115610959576109596114e2565b60405190808252806020026020018201604052801561099e57816020015b60408051808201909152600080825260208201528152602001906001900390816109775790505b50905060005b8351811015610ab85760007f00000000000000000000000000000000000000000000000000000000000000006001600160a01b03168583815181106109eb576109eb6117bf565b60200260200101516001600160a01b031614610a08576000610a2a565b610a2a848381518110610a1d57610a1d6117bf565b60200260200101516112d7565b90506040518060400160405280868481518110610a4957610a496117bf565b60200260200101516001600160a01b0316815260200182868581518110610a7257610a726117bf565b6020026020010151610a8491906117eb565b815250838381518110610a9957610a996117bf565b6020026020010181905250508080610ab090611802565b9150506109a4565b5095945050505050565b6040517f93f1a40b000000000000000000000000000000000000000000000000000000008152600481018290526001600160a01b037f00000000000000000000000000000000000000000000000000000000000000008116602483015260009182918516906393f1a40b90604401608060405180830381865afa158015610b4d573d6000803e3d6000fd5b505050506040513d601f19601f82011682018060405250810190610b71919061183b565b5050506fffffffffffffffffffffffffffffffff16949350505050565b6001600160a01b03808316600090815260016020908152604080832085845290915290205483918391163314610c065760405162461bcd60e51b815260206004820152601960248201527f576f6d62617450726f78793a3a6f6e6c7953747261746567790000000000000060448201526064016102f0565b6000610c128585610880565b60405160248101869052600060448201819052919250610c3f918791631c57762b60e31b90606401610328565b5060005b8151811015610878576000828281518110610c6057610c606117bf565b6020908102919091010151516040516370a0823160e01b81526001600160a01b037f000000000000000000000000000000000000000000000000000000000000000081166004830152909116906370a0823190602401602060405180830381865afa158015610cd3573d6000803e3d6000fd5b505050506040513d601f19601f82011682018060405250810190610cf791906114ac565b90507f00000000000000000000000000000000000000000000000000000000000000006001600160a01b0316838381518110610d3557610d356117bf565b6020026020010151600001516001600160a01b031603610eab5760007f00000000000000000000000000000000000000000000000000000000000000006001600160a01b031663bcd57b316040518163ffffffff1660e01b8152600401602060405180830381865afa158015610daf573d6000803e3d6000fd5b505050506040513d601f19601f82011682018060405250810190610dd391906114ac565b9050610de7610de282846117eb565b6112d7565b610df1908261188f565b9050610dfd81836117eb565b9150600354811115610e1657610e12816111fa565b5060005b6040517f336c765b000000000000000000000000000000000000000000000000000000008152600481018290527f00000000000000000000000000000000000000000000000000000000000000006001600160a01b03169063336c765b90602401600060405180830381600087803b158015610e9157600080fd5b505af1158015610ea5573d6000803e3d6000fd5b50505050505b610ef0838381518110610ec057610ec06117bf565b6020908102919091010151516040513360248201526044810184905260009063a9059cbb60e01b90606401610328565b50508080610efd90611802565b915050610c43565b6000546001600160a01b03163314610f565760405162461bcd60e51b81526020600482015260146024820152732bb7b6b130ba283937bc3c9d1d37b7363ca232bb60611b60448201526064016102f0565b6127108210610fa75760405162461bcd60e51b815260206004820152601e60248201527f576f6d62617450726f78793a3a496e76616c696420626f6f737420666565000060448201526064016102f0565b600291909155600355565b6001600160a01b0380851660009081526001602090815260408083208784529091529020548591859116331461102a5760405162461bcd60e51b815260206004820152601960248201527f576f6d62617450726f78793a3a6f6e6c7953747261746567790000000000000060448201526064016102f0565b6110348686610b8e565b60405160248101869052604481018490526110789087906000907f441a3e700000000000000000000000000000000000000000000000000000000090606401610328565b50604051336024820152604481018490526103e590859060009063a9059cbb60e01b90606401610328565b6000546001600160a01b031633146110f45760405162461bcd60e51b81526020600482015260146024820152732bb7b6b130ba283937bc3c9d1d37b7363ca232bb60611b60448201526064016102f0565b6000805473ffffffffffffffffffffffffffffffffffffffff19166001600160a01b0392909216919091179055565b6060600080866001600160a01b031663b61d27f68787876040518463ffffffff1660e01b8152600401611158939291906118a7565b6000604051808303816000875af1158015611177573d6000803e3d6000fd5b505050506040513d6000823e601f3d908101601f1916820160405261119f91908101906118f1565b91509150816111f05760405162461bcd60e51b815260206004820152601f60248201527f576f6d62617450726f78793a3a7361666545786563757465206661696c65640060448201526064016102f0565b9695505050505050565b6040516001600160a01b037f00000000000000000000000000000000000000000000000000000000000000001660248201526044810182905261126d907f00000000000000000000000000000000000000000000000000000000000000009060009063095ea7b360e01b90606401610328565b50604051602481018290526105b560448201526112d3907f0000000000000000000000000000000000000000000000000000000000000000906000907f1b2ef1ca0000000000000000000000000000000000000000000000000000000090606401610328565b5050565b6000612710600254836112ea9190611953565b6112f49190611972565b92915050565b6001600160a01b038116811461051b57600080fd5b6000806000806080858703121561132557600080fd5b8435611330816112fa565b9350602085013592506040850135611347816112fa565b9396929550929360600135925050565b60006020828403121561136957600080fd5b5035919050565b60006020828403121561138257600080fd5b813561138d816112fa565b9392505050565b6000806000606084860312156113a957600080fd5b83356113b4816112fa565b92506020840135915060408401356113cb816112fa565b809150509250925092565b600080604083850312156113e957600080fd5b82356113f4816112fa565b946020939093013593505050565b602080825282518282018190526000919060409081850190868401855b8281101561144d57815180516001600160a01b0316855286015186850152928401929085019060010161141f565b5091979650505050505050565b6000806040838503121561146d57600080fd5b50508035926020909101359150565b8051801515811461148c57600080fd5b919050565b6000602082840312156114a357600080fd5b61138d8261147c565b6000602082840312156114be57600080fd5b5051919050565b6000602082840312156114d757600080fd5b815161138d816112fa565b634e487b7160e01b600052604160045260246000fd5b604051601f8201601f1916810167ffffffffffffffff81118282101715611521576115216114e2565b604052919050565b600067ffffffffffffffff821115611543576115436114e2565b5060051b60200190565b60005b83811015611568578181015183820152602001611550565b83811115611577576000848401525b50505050565b600067ffffffffffffffff831115611597576115976114e2565b6115aa601f8401601f19166020016114f8565b90508281528383830111156115be57600080fd5b61138d83602083018461154d565b600082601f8301126115dd57600080fd5b815160206115f26115ed83611529565b6114f8565b82815260059290921b8401810191818101908684111561161157600080fd5b8286015b8481101561166657805167ffffffffffffffff8111156116355760008081fd5b8701603f810189136116475760008081fd5b61165889868301516040840161157d565b845250918301918301611615565b509695505050505050565b600082601f83011261168257600080fd5b815160206116926115ed83611529565b82815260059290921b840181019181810190868411156116b157600080fd5b8286015b8481101561166657805183529183019183016116b5565b600080600080608085870312156116e257600080fd5b8451935060208086015167ffffffffffffffff8082111561170257600080fd5b818801915088601f83011261171657600080fd5b81516117246115ed82611529565b81815260059190911b8301840190848101908b83111561174357600080fd5b938501935b8285101561176a57845161175b816112fa565b82529385019390850190611748565b60408b0151909850945050508083111561178357600080fd5b61178f89848a016115cc565b945060608801519250808311156117a557600080fd5b50506117b387828801611671565b91505092959194509250565b634e487b7160e01b600052603260045260246000fd5b634e487b7160e01b600052601160045260246000fd5b6000828210156117fd576117fd6117d5565b500390565b600060018201611814576118146117d5565b5060010190565b80516fffffffffffffffffffffffffffffffff8116811461148c57600080fd5b6000806000806080858703121561185157600080fd5b61185a8561181b565b93506118686020860161181b565b92506118766040860161181b565b91506118846060860161181b565b905092959194509250565b600082198211156118a2576118a26117d5565b500190565b6001600160a01b038416815282602082015260606040820152600082518060608401526118db81608085016020870161154d565b601f01601f191691909101608001949350505050565b6000806040838503121561190457600080fd5b61190d8361147c565b9150602083015167ffffffffffffffff81111561192957600080fd5b8301601f8101851361193a57600080fd5b6119498582516020840161157d565b9150509250929050565b600081600019048311821515161561196d5761196d6117d5565b500290565b60008261198f57634e487b7160e01b600052601260045260246000fd5b50049056fea264697066735822122033602b38a9d53db3a9f2899f022cec2e9762a144fda3f8c53f23141d32308fde64736f6c634300080d0033",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106100ea5760003560e01c80636656f9aa1161008c5780639054261f116100665780639054261f1461020f5780639291d56314610222578063da09c72c14610235578063daa4aa691461024857600080fd5b80636656f9aa146101c85780637387f44d146101e95780639042b3d0146101fc57600080fd5b80633b8ae397116100c85780633b8ae3971461015b57806346c96aac1461016e578063551512de146101955780636099ecb2146101a857600080fd5b8063143de794146100ef57806319d7d7df146101335780631b55d19e14610148575b600080fd5b6101167f000000000000000000000000000000000000000000000000000000000000000081565b6040516001600160a01b0390911681526020015b60405180910390f35b61014661014136600461130f565b61027c565b005b610146610156366004611357565b6103ee565b610146610169366004611370565b61051e565b6101167f000000000000000000000000000000000000000000000000000000000000000081565b6101466101a3366004611394565b61071f565b6101bb6101b63660046113d6565b610880565b60405161012a9190611402565b6101db6101d63660046113d6565b610ac2565b60405190815260200161012a565b6101466101f73660046113d6565b610b8e565b61014661020a36600461145a565b610f05565b61014661021d36600461130f565b610fb2565b610146610230366004611370565b6110a3565b600054610116906001600160a01b031681565b6101166102563660046113d6565b60016020908152600092835260408084209091529082529020546001600160a01b031681565b6001600160a01b038085166000908152600160209081526040808320878452909152902054859185911633146102f95760405162461bcd60e51b815260206004820152601960248201527f576f6d62617450726f78793a3a6f6e6c7953747261746567790000000000000060448201526064015b60405180910390fd5b6040516001600160a01b0387166024820152604481018490526103b990859060009063095ea7b360e01b906064015b60408051601f198184030181529190526020810180517bffffffffffffffffffffffffffffffffffffffffffffffffffffffff167fffffffff00000000000000000000000000000000000000000000000000000000909316929092179091526001600160a01b037f000000000000000000000000000000000000000000000000000000000000000016929190611123565b5060405160248101869052604481018490526103e5908790600090631c57762b60e31b90606401610328565b50505050505050565b6000546001600160a01b0316331461043f5760405162461bcd60e51b81526020600482015260146024820152732bb7b6b130ba283937bc3c9d1d37b7363ca232bb60611b60448201526064016102f0565b6040517f23b872dd0000000000000000000000000000000000000000000000000000000081523360048201526001600160a01b037f000000000000000000000000000000000000000000000000000000000000000081166024830152604482018390527f000000000000000000000000000000000000000000000000000000000000000016906323b872dd906064016020604051808303816000875af11580156104ed573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906105119190611491565b5061051b816111fa565b50565b6000546001600160a01b0316331461056f5760405162461bcd60e51b81526020600482015260146024820152732bb7b6b130ba283937bc3c9d1d37b7363ca232bb60611b60448201526064016102f0565b6000816001600160a01b031663f10684546040518163ffffffff1660e01b8152600401602060405180830381865afa1580156105af573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906105d391906114ac565b90506000826001600160a01b0316633bd61ba86040518163ffffffff1660e01b8152600401602060405180830381865afa158015610615573d6000803e3d6000fd5b505050506040513d601f19601f8201168201806040525081019061063991906114c5565b6001600160a01b03808216600090815260016020908152604080832087845290915290205491925016156106d55760405162461bcd60e51b815260206004820152602b60248201527f576f6d62617450726f78793a3a537472617465677920666f722050494420616c60448201527f726561647920616464656400000000000000000000000000000000000000000060648201526084016102f0565b6001600160a01b0390811660009081526001602090815260408083209483529390529190912080549190921673ffffffffffffffffffffffffffffffffffffffff19909116179055565b6001600160a01b038084166000908152600160209081526040808320868452909152902054849184911633146107975760405162461bcd60e51b815260206004820152601960248201527f576f6d62617450726f78793a3a6f6e6c7953747261746567790000000000000060448201526064016102f0565b6107b8856000635312ea8e60e01b8760405160240161032891815260200190565b506040516370a0823160e01b81526001600160a01b037f00000000000000000000000000000000000000000000000000000000000000008116600483015261087891859160009163a9059cbb60e01b913391908516906370a0823190602401602060405180830381865afa158015610834573d6000803e3d6000fd5b505050506040513d601f19601f8201168201806040525081019061085891906114ac565b6040516001600160a01b0390921660248301526044820152606401610328565b505050505050565b6040517fffcd4263000000000000000000000000000000000000000000000000000000008152600481018290526001600160a01b037f00000000000000000000000000000000000000000000000000000000000000008116602483015260609160009182919086169063ffcd426390604401600060405180830381865afa15801561090f573d6000803e3d6000fd5b505050506040513d6000823e601f3d908101601f1916820160405261093791908101906116cc565b9350509250506000825167ffffffffffffffff811115610959576109596114e2565b60405190808252806020026020018201604052801561099e57816020015b60408051808201909152600080825260208201528152602001906001900390816109775790505b50905060005b8351811015610ab85760007f00000000000000000000000000000000000000000000000000000000000000006001600160a01b03168583815181106109eb576109eb6117bf565b60200260200101516001600160a01b031614610a08576000610a2a565b610a2a848381518110610a1d57610a1d6117bf565b60200260200101516112d7565b90506040518060400160405280868481518110610a4957610a496117bf565b60200260200101516001600160a01b0316815260200182868581518110610a7257610a726117bf565b6020026020010151610a8491906117eb565b815250838381518110610a9957610a996117bf565b6020026020010181905250508080610ab090611802565b9150506109a4565b5095945050505050565b6040517f93f1a40b000000000000000000000000000000000000000000000000000000008152600481018290526001600160a01b037f00000000000000000000000000000000000000000000000000000000000000008116602483015260009182918516906393f1a40b90604401608060405180830381865afa158015610b4d573d6000803e3d6000fd5b505050506040513d601f19601f82011682018060405250810190610b71919061183b565b5050506fffffffffffffffffffffffffffffffff16949350505050565b6001600160a01b03808316600090815260016020908152604080832085845290915290205483918391163314610c065760405162461bcd60e51b815260206004820152601960248201527f576f6d62617450726f78793a3a6f6e6c7953747261746567790000000000000060448201526064016102f0565b6000610c128585610880565b60405160248101869052600060448201819052919250610c3f918791631c57762b60e31b90606401610328565b5060005b8151811015610878576000828281518110610c6057610c606117bf565b6020908102919091010151516040516370a0823160e01b81526001600160a01b037f000000000000000000000000000000000000000000000000000000000000000081166004830152909116906370a0823190602401602060405180830381865afa158015610cd3573d6000803e3d6000fd5b505050506040513d601f19601f82011682018060405250810190610cf791906114ac565b90507f00000000000000000000000000000000000000000000000000000000000000006001600160a01b0316838381518110610d3557610d356117bf565b6020026020010151600001516001600160a01b031603610eab5760007f00000000000000000000000000000000000000000000000000000000000000006001600160a01b031663bcd57b316040518163ffffffff1660e01b8152600401602060405180830381865afa158015610daf573d6000803e3d6000fd5b505050506040513d601f19601f82011682018060405250810190610dd391906114ac565b9050610de7610de282846117eb565b6112d7565b610df1908261188f565b9050610dfd81836117eb565b9150600354811115610e1657610e12816111fa565b5060005b6040517f336c765b000000000000000000000000000000000000000000000000000000008152600481018290527f00000000000000000000000000000000000000000000000000000000000000006001600160a01b03169063336c765b90602401600060405180830381600087803b158015610e9157600080fd5b505af1158015610ea5573d6000803e3d6000fd5b50505050505b610ef0838381518110610ec057610ec06117bf565b6020908102919091010151516040513360248201526044810184905260009063a9059cbb60e01b90606401610328565b50508080610efd90611802565b915050610c43565b6000546001600160a01b03163314610f565760405162461bcd60e51b81526020600482015260146024820152732bb7b6b130ba283937bc3c9d1d37b7363ca232bb60611b60448201526064016102f0565b6127108210610fa75760405162461bcd60e51b815260206004820152601e60248201527f576f6d62617450726f78793a3a496e76616c696420626f6f737420666565000060448201526064016102f0565b600291909155600355565b6001600160a01b0380851660009081526001602090815260408083208784529091529020548591859116331461102a5760405162461bcd60e51b815260206004820152601960248201527f576f6d62617450726f78793a3a6f6e6c7953747261746567790000000000000060448201526064016102f0565b6110348686610b8e565b60405160248101869052604481018490526110789087906000907f441a3e700000000000000000000000000000000000000000000000000000000090606401610328565b50604051336024820152604481018490526103e590859060009063a9059cbb60e01b90606401610328565b6000546001600160a01b031633146110f45760405162461bcd60e51b81526020600482015260146024820152732bb7b6b130ba283937bc3c9d1d37b7363ca232bb60611b60448201526064016102f0565b6000805473ffffffffffffffffffffffffffffffffffffffff19166001600160a01b0392909216919091179055565b6060600080866001600160a01b031663b61d27f68787876040518463ffffffff1660e01b8152600401611158939291906118a7565b6000604051808303816000875af1158015611177573d6000803e3d6000fd5b505050506040513d6000823e601f3d908101601f1916820160405261119f91908101906118f1565b91509150816111f05760405162461bcd60e51b815260206004820152601f60248201527f576f6d62617450726f78793a3a7361666545786563757465206661696c65640060448201526064016102f0565b9695505050505050565b6040516001600160a01b037f00000000000000000000000000000000000000000000000000000000000000001660248201526044810182905261126d907f00000000000000000000000000000000000000000000000000000000000000009060009063095ea7b360e01b90606401610328565b50604051602481018290526105b560448201526112d3907f0000000000000000000000000000000000000000000000000000000000000000906000907f1b2ef1ca0000000000000000000000000000000000000000000000000000000090606401610328565b5050565b6000612710600254836112ea9190611953565b6112f49190611972565b92915050565b6001600160a01b038116811461051b57600080fd5b6000806000806080858703121561132557600080fd5b8435611330816112fa565b9350602085013592506040850135611347816112fa565b9396929550929360600135925050565b60006020828403121561136957600080fd5b5035919050565b60006020828403121561138257600080fd5b813561138d816112fa565b9392505050565b6000806000606084860312156113a957600080fd5b83356113b4816112fa565b92506020840135915060408401356113cb816112fa565b809150509250925092565b600080604083850312156113e957600080fd5b82356113f4816112fa565b946020939093013593505050565b602080825282518282018190526000919060409081850190868401855b8281101561144d57815180516001600160a01b0316855286015186850152928401929085019060010161141f565b5091979650505050505050565b6000806040838503121561146d57600080fd5b50508035926020909101359150565b8051801515811461148c57600080fd5b919050565b6000602082840312156114a357600080fd5b61138d8261147c565b6000602082840312156114be57600080fd5b5051919050565b6000602082840312156114d757600080fd5b815161138d816112fa565b634e487b7160e01b600052604160045260246000fd5b604051601f8201601f1916810167ffffffffffffffff81118282101715611521576115216114e2565b604052919050565b600067ffffffffffffffff821115611543576115436114e2565b5060051b60200190565b60005b83811015611568578181015183820152602001611550565b83811115611577576000848401525b50505050565b600067ffffffffffffffff831115611597576115976114e2565b6115aa601f8401601f19166020016114f8565b90508281528383830111156115be57600080fd5b61138d83602083018461154d565b600082601f8301126115dd57600080fd5b815160206115f26115ed83611529565b6114f8565b82815260059290921b8401810191818101908684111561161157600080fd5b8286015b8481101561166657805167ffffffffffffffff8111156116355760008081fd5b8701603f810189136116475760008081fd5b61165889868301516040840161157d565b845250918301918301611615565b509695505050505050565b600082601f83011261168257600080fd5b815160206116926115ed83611529565b82815260059290921b840181019181810190868411156116b157600080fd5b8286015b8481101561166657805183529183019183016116b5565b600080600080608085870312156116e257600080fd5b8451935060208086015167ffffffffffffffff8082111561170257600080fd5b818801915088601f83011261171657600080fd5b81516117246115ed82611529565b81815260059190911b8301840190848101908b83111561174357600080fd5b938501935b8285101561176a57845161175b816112fa565b82529385019390850190611748565b60408b0151909850945050508083111561178357600080fd5b61178f89848a016115cc565b945060608801519250808311156117a557600080fd5b50506117b387828801611671565b91505092959194509250565b634e487b7160e01b600052603260045260246000fd5b634e487b7160e01b600052601160045260246000fd5b6000828210156117fd576117fd6117d5565b500390565b600060018201611814576118146117d5565b5060010190565b80516fffffffffffffffffffffffffffffffff8116811461148c57600080fd5b6000806000806080858703121561185157600080fd5b61185a8561181b565b93506118686020860161181b565b92506118766040860161181b565b91506118846060860161181b565b905092959194509250565b600082198211156118a2576118a26117d5565b500190565b6001600160a01b038416815282602082015260606040820152600082518060608401526118db81608085016020870161154d565b601f01601f191691909101608001949350505050565b6000806040838503121561190457600080fd5b61190d8361147c565b9150602083015167ffffffffffffffff81111561192957600080fd5b8301601f8101851361193a57600080fd5b6119498582516020840161157d565b9150509250929050565b600081600019048311821515161561196d5761196d6117d5565b500290565b60008261198f57634e487b7160e01b600052601260045260246000fd5b50049056fea264697066735822122033602b38a9d53db3a9f2899f022cec2e9762a144fda3f8c53f23141d32308fde64736f6c634300080d0033",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {
+      "approveStrategy(address)": {
+        "details": "Very sensitive, restricted to devAddrCan only be set once per PID and staking contract (reported by the strategy)",
+        "params": {
+          "_strategy": "address"
+        }
+      },
+      "boost(uint256)": {
+        "details": "This contract needs approval to transfer _amount WOM before calling this method",
+        "params": {
+          "_amount": "WOM amount"
+        }
+      },
+      "updateBoostFee(uint256,uint256)": {
+        "params": {
+          "_boostFeeBips": "Boost fee bips, check BIPS_DIVISOR",
+          "_minBoostAmount": "Minimum amount of WOM to create a new lock position"
+        }
+      },
+      "updateDevAddr(address)": {
+        "params": {
+          "newValue": "address"
+        }
+      }
+    },
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {
+      "approveStrategy(address)": {
+        "notice": "Add an approved strategy"
+      },
+      "boost(uint256)": {
+        "notice": "Transfer from _amount WOM from sender and lock for veWOM"
+      },
+      "updateBoostFee(uint256,uint256)": {
+        "notice": "Update additional/optional boost fee settins"
+      },
+      "updateDevAddr(address)": {
+        "notice": "Update devAddr"
+      }
+    },
+    "version": 1
+  },
+  "storageLayout": {
+    "storage": [
+      {
+        "astId": 3312,
+        "contract": "contracts/strategies/crosschain/wombat/WombatProxy.sol:WombatProxy",
+        "label": "devAddr",
+        "offset": 0,
+        "slot": "0",
+        "type": "t_address"
+      },
+      {
+        "astId": 3326,
+        "contract": "contracts/strategies/crosschain/wombat/WombatProxy.sol:WombatProxy",
+        "label": "approvedStrategies",
+        "offset": 0,
+        "slot": "1",
+        "type": "t_mapping(t_address,t_mapping(t_uint256,t_address))"
+      },
+      {
+        "astId": 3328,
+        "contract": "contracts/strategies/crosschain/wombat/WombatProxy.sol:WombatProxy",
+        "label": "boostFeeBips",
+        "offset": 0,
+        "slot": "2",
+        "type": "t_uint256"
+      },
+      {
+        "astId": 3330,
+        "contract": "contracts/strategies/crosschain/wombat/WombatProxy.sol:WombatProxy",
+        "label": "minBoostAmount",
+        "offset": 0,
+        "slot": "3",
+        "type": "t_uint256"
+      }
+    ],
+    "types": {
+      "t_address": {
+        "encoding": "inplace",
+        "label": "address",
+        "numberOfBytes": "20"
+      },
+      "t_mapping(t_address,t_mapping(t_uint256,t_address))": {
+        "encoding": "mapping",
+        "key": "t_address",
+        "label": "mapping(address => mapping(uint256 => address))",
+        "numberOfBytes": "32",
+        "value": "t_mapping(t_uint256,t_address)"
+      },
+      "t_mapping(t_uint256,t_address)": {
+        "encoding": "mapping",
+        "key": "t_uint256",
+        "label": "mapping(uint256 => address)",
+        "numberOfBytes": "32",
+        "value": "t_address"
+      },
+      "t_uint256": {
+        "encoding": "inplace",
+        "label": "uint256",
+        "numberOfBytes": "32"
+      }
+    }
+  }
+}

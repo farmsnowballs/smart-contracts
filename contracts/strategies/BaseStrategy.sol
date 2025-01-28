@@ -41,8 +41,6 @@ abstract contract BaseStrategy is YakStrategyV3 {
 
         simpleRouter = ISimpleRouter(_settings.simpleRouter);
 
-        require(_strategySettings.minTokensToReinvest > 0, "BaseStrategy::Invalid configuration");
-
         emit Reinvest(0, 0);
     }
 

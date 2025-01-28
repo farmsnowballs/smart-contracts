@@ -9,7 +9,7 @@ contract BayDepositor is IBayDepositor, Ownable {
     address public proxy;
 
     modifier onlyGmxProxy() {
-        require(msg.sender == proxy, "GmxDepositor::onlyGmxProxy");
+        require(msg.sender == proxy, "BayDepositor::onlyGmxProxy");
         _;
     }
 

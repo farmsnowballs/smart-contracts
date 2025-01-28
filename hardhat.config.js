@@ -4,23 +4,25 @@ require("hardhat-deploy");
 require("hardhat-deploy-ethers");
 require("hardhat-abi-exporter");
 require("hardhat-contract-sizer");
-require("@nomiclabs/hardhat-etherscan");
+require("@nomicfoundation/hardhat-verify");
 const dotenv = require("dotenv");
-const {task} = require("hardhat/config");
+const { task } = require("hardhat/config");
 dotenv.config();
 
-const MAINNET_URL = process.env.MAINNET_URL;
-const TESTNET_URL = process.env.TESTNET_URL;
-const MAINNET_CHAIN_ID = parseInt(process.env.MAINNET_CHAIN_ID);
-const TESTNET_CHAIN_ID = parseInt(process.env.TESTNET_CHAIN_ID);
+const AVALANCHE_MAINNET_URL = process.env.AVALANCHE_MAINNET_URL;
+const AVALANCHE_FUJI_URL = process.env.AVALANCHE_FUJI_URL;
+const ARBITRUM_URL = process.env.ARBITRUM_URL;
 
-const DEPLOYMENTS_PATH = process.env.DEPLOYMENTS_PATH;
+const DOGE_MAINNET_URL = process.env.DOGE_MAINNET_URL;
+const MANTLE_MAINNET_URL = process.env.MANTLE_MAINNET_URL;
+const ZKSYNC_ERA_MAINNET_URL = process.env.ZKSYNC_ERA_MAINNET_URL;
 
 const PK_USER = process.env.PK_USER;
 const PK_OWNER = process.env.PK_OWNER;
 const PK_TEST = process.env.PK_TEST;
 
-const EXPLORER_API_KEY = process.env.EXPLORER_API_KEY;
+const ARBISCAN_API_KEY = process.env.ARBISCAN_API_KEY;
+const SNOWTRACE_API_KEY = process.env.SNOWTRACE_API_KEY;
 
 // require scripts
 const farmData = require("./scripts/farm-data");
@@ -29,13 +31,13 @@ const verifyContract = require("./scripts/verify-contract");
 // tasks
 task("checkFarmState", "Gives a nice output of the state of the farm")
     .addParam("farm", "Farm to check the state of")
-    .setAction(async ({farm}) => farmData(farm));
+    .setAction(async ({ farm }) => farmData(farm));
 
 // to verify all contracts use
 // find ./deployments/mainnet -maxdepth 1 -type f -not -path '*/\.*' -path "*.json" | xargs -L1 npx hardhat verifyContract --deployment-file-path
 task("verifyContract", "Verifies the contract in the snowtrace")
     .addParam("deploymentFilePath", "Deployment file path")
-    .setAction(async ({deploymentFilePath}, hre) => verifyContract(deploymentFilePath, hre));
+    .setAction(async ({ deploymentFilePath }, hre) => verifyContract(deploymentFilePath, hre));
 
 // You need to export an object to set up your config
 // Go to https://hardhat.org/config/ to learn more
@@ -70,7 +72,7 @@ module.exports = {
     },
     paths: {
         deploy: "deploy",
-        deployments: DEPLOYMENTS_PATH,
+        deployments: "deployments",
     },
     abiExporter: {
         path: "./abis",
@@ -78,29 +80,71 @@ module.exports = {
         flat: true,
     },
     etherscan: {
-        apiKey: EXPLORER_API_KEY,
+        apiKey: {
+            mainnet: SNOWTRACE_API_KEY,
+            avalanche: SNOWTRACE_API_KEY,
+            arbitrumOne: ARBISCAN_API_KEY,
+            mantle: SNOWTRACE_API_KEY,
+        },
+        customChains: [
+            {
+                network: "mantle",
+                chainId: 5000,
+                urls: {
+                    apiURL: "https://explorer.mantle.xyz/api",
+                    browserURL: "https://explorer.mantle.xyz"
+                }
+            }
+        ]
     },
     networks: {
         hardhat: {
-            chainId: MAINNET_CHAIN_ID,
+            chainId: 43114,
+            // gasPrice: 25000000000,
             throwOnTransactionFailures: false,
-            loggingEnabled: true,
+            loggingEnabled: false,
             forking: {
-                url: MAINNET_URL,
+                url: AVALANCHE_MAINNET_URL,
                 enabled: true,
             },
         },
         mainnet: {
-            chainId: MAINNET_CHAIN_ID,
-            gasPrice: 25000000000,
-            url: MAINNET_URL,
+            chainId: 43114,
+            // gasPrice: 25000000000,
+            url: AVALANCHE_MAINNET_URL,
             accounts: [PK_USER, PK_OWNER],
         },
-        testnet: {
-            chainId: TESTNET_CHAIN_ID,
+        fuji: {
+            chainId: 43113,
             gasPrice: 25000000000,
-            url: TESTNET_URL,
+            url: AVALANCHE_FUJI_URL,
             accounts: [PK_TEST],
         },
+        arbitrum: {
+            chainId: 42161,
+            url: ARBITRUM_URL,
+            accounts: [PK_USER, PK_OWNER]
+        },
+        avalanche: {
+            chainId: 43114,
+            // gasPrice: 25000000000,
+            url: AVALANCHE_MAINNET_URL,
+            accounts: [PK_USER, PK_OWNER],
+        },
+        doge: {
+            chainId: 2000,
+            url: DOGE_MAINNET_URL,
+            accounts: [PK_USER, PK_OWNER],
+        },
+        mantle: {
+            chainId: 5000,
+            url: MANTLE_MAINNET_URL,
+            accounts: [PK_USER, PK_OWNER],
+        },
+        zksync: {
+            chainId: 324,
+            url: ZKSYNC_ERA_MAINNET_URL,
+            accounts: [PK_USER, PK_OWNER],
+        }
     },
 };
